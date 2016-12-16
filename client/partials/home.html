@@ -1,0 +1,18 @@
+<div ng-controller = "homeController">
+    <a href="#!/create">Create a New Poll</a><a href="#!/">Logout</a>
+    <h1>Current Polls: </h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Survey Question</th>
+            <th>Date Posted</th>
+            <th>Action</th>
+        </tr>
+        <tr ng-repeat = "poll in polls">
+            <td>{{ poll._user }}</td>
+            <td><a href="#!/poll/{{ poll._id }}">{{ poll.question }}</a></td>
+            <td>{{ poll.createdAt | date: 'MMM dd yyyy' }}</td>
+            <td ng-if="poll._user===user._id"><a href="" ng-click="callDeletePoll(poll)">Delete</a></td>
+        </tr>
+    </table>
+</div>

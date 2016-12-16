@@ -1,0 +1,13 @@
+<div ng-controller = "createController">
+    <a href="#!/home">Cancel</a>
+    <h3>Put the question and options here:</h3>
+    <form class="" ng-submit="callCreatePoll(newPoll)">
+        Question: <input type="text" ng-model="newPoll.question"> <br>
+        Option 1: <input type="text" ng-model="newPoll.option1"> <br>
+        Option 2: <input type="text" ng-model="newPoll.option2"> <br>
+        Option 3: <input type="text" ng-model="newPoll.option3"> <br>
+        Option 4: <input type="text" ng-model="newPoll.option4"> <br>
+        <input type="submit" name="pollBtn" value="Create Poll">
+    </form>
+    <h3 ng-repeat = "message in messages" color = "maroon">{{message}}</h3>
+</div>
