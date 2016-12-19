@@ -1,6 +1,7 @@
 <div ng-controller = "homeController">
     <a href="#!/create">Create a New Poll</a><a href="#!/">Logout</a>
     <h1>Current Polls: </h1>
+    <input type="text" ng-model="search.question" placeholder="filter by question">
     <table>
         <tr>
             <th>Name</th>
@@ -8,7 +9,7 @@
             <th>Date Posted</th>
             <th>Action</th>
         </tr>
-        <tr ng-repeat = "poll in polls">
+        <tr ng-repeat = "poll in polls | filter:search">
             <td>{{ poll._user }}</td>
             <td><a href="#!/poll/{{ poll._id }}">{{ poll.question }}</a></td>
             <td>{{ poll.createdAt | date: 'MMM dd yyyy' }}</td>
