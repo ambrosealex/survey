@@ -10,7 +10,7 @@
             <th>Action</th>
         </tr>
         <tr ng-repeat = "poll in polls | filter:search">
-            <td>{{ poll._user }}</td>
+            <td>{{ poll._user.name }}</td>
             <td><a href="#!/poll/{{ poll._id }}">{{ poll.question }}</a></td>
             <td>{{ poll.createdAt | date: 'MMM dd yyyy' }}</td>
             <td ng-if="poll._user===user._id"><a href="" ng-click="callDeletePoll(poll)">Delete</a></td>

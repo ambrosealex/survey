@@ -3,7 +3,7 @@ var User = mongoose.model('User');
 
 module.exports = {
   index: function(req, res) {
-      User.find({}, function (err, users) {
+      User.find({}).populate('polls').exec( function (err, users) {
           res.json({ users: users });
       })
   },

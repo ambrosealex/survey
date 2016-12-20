@@ -5,7 +5,7 @@ var currentOptions;
 
 module.exports = {
   index: function(req, res) {
-      Poll.find({}).populate('User').exec( function (err, polls) {
+      Poll.find({}).populate('_user').exec( function (err, polls) {
           res.json({ polls: polls });
       })
   },

@@ -12,7 +12,7 @@ app.controller("homeController", ["$scope", "surveyFactory", '$location', functi
     $scope.user;
     surveyFactory.pollIndex(function (polls, user) {
         $scope.user = user;
-        console.log("THIS IS USER", user);
+        console.log("THESE ARE THE POLLS", polls);
         if(!user){
             $location.url('/');
         }
